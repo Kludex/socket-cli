@@ -1,10 +1,11 @@
-from ..options.socketio_option import COMMANDS, COMMAND_OPTS
-from ..commands.command import Command
-from .runner import Runner
-import socketio
 import json
-import click
-import asyncio
+
+import typer
+
+import socketio
+
+from ..options.socketio_option import COMMAND_OPTS
+from .runner import Runner
 
 
 class SocketIO(Runner):
@@ -30,7 +31,7 @@ class SocketIO(Runner):
     def on_message(self, msg):
         del self.sio.handlers[self.namespace][self.event]
         self.spinner.stop()
-        click.echo_via_pager(json.dumps(msg))
+        typer.echo_via_pager(json.dumps(msg))
         self.logger.debug("receive {}".format(msg))
 
     def connect(self, options):

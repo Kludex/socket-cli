@@ -31,7 +31,7 @@ class Prompt(object):
         self.prompt_session = PromptSession(
             lexer=PygmentsLexer(JsonBareObjectLexer),
             completer=DynamicCompleter(lambda: self.completer),
-            history=FileHistory(os.path.expanduser("~/.socket-cli.history")),
+            history=FileHistory(os.path.expanduser("~/.socketio-cli.history")),
         )
 
     def get_prompt_message(self):

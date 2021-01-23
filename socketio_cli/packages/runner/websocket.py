@@ -1,10 +1,12 @@
-from ..options.websocket_option import COMMANDS, COMMAND_OPTS
-from ..commands.command import Command
-from .runner import Runner
 import asyncio
-import websockets
-import click
 import json
+
+import typer
+import websockets
+
+from ..commands.command import Command
+from ..options.websocket_option import COMMAND_OPTS, COMMANDS
+from .runner import Runner
 
 
 class WebSocket(Runner):
@@ -30,7 +32,7 @@ class WebSocket(Runner):
         self.spinner.start()
         result = await self.websocket.recv()
         self.spinner.stop()
-        click.echo_via_pager(json.dumps(result))
+        typer.echo_via_pager(json.dumps(result))
 
     async def send(self, options):
         result = await self.websocket.send(options.data)
