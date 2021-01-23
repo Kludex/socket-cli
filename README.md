@@ -7,6 +7,8 @@
 
 > A command-line client for socket.io, websocket, unix-socket that has auto-completion and syntax highlighting.
 
+This project was created from [socket-cli](https://github.com/gcaaa31928/socket-cli).
+
 ## ✨ Demo
 
 ### Just take a look
@@ -57,23 +59,3 @@ or a unix socket server
 
 Contributions, issues and feature requests are welcome.<br />
 Feel free to check [issues page](https://github.com/gcaaa31928/socketio-cli/issues) and pull-request welcome.
-
-
-## TODO
-- [ ] connect socket.io server with headers
-- [ ] unit-testing, ci
-
-
-## Author
-
-👤 **gcaaa31928**
-
-* Website: http://gcaaa.blogspot.tw/
-* Github: [@gcaaa31928](https://github.com/gcaaa31928)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
