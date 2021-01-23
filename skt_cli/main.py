@@ -34,7 +34,3 @@ def cli(
             logger.debug("Exception: %r.", exc)
             logger.error("traceback: %r", traceback.format_exc())
             typer.echo(str(exc), color="red")
-
-
-if __name__ == "__main__":
-    app()
