@@ -1,11 +1,7 @@
-from ..options.websocket_option import COMMANDS, COMMAND_OPTS
-from ..commands.command import Command
-from .runner import Runner
-import asyncio
-import websockets
-import click
-import json
 import socket
+
+from ..options.websocket_option import COMMAND_OPTS
+from .runner import Runner
 
 BUFF_SIZE = 1024
 

@@ -1,13 +1,14 @@
-from socket_cli.__init__ import __version__
-import sys, subprocess
+import subprocess
+import sys
+
+from socketio_cli.__init__ import __version__
 
 try:
-    from setuptools import setup, find_packages, Command
+    from setuptools import Command, find_packages, setup
 except ImportError:
     from distutils.core import setup
 
 install_requirements = [
-    "click>=4.0",
     "prompt_toolkit>=2.0.10",
     "fuzzyfinder>=2.1.0",
     "python-socketio>=4.3.1",
@@ -39,13 +40,15 @@ class lint(Command):
 
 
 setup(
-    name="socket-cli",
+    name="socketio-cli",
     version=__version__,
     author="gcaaa31928",
     author_email="gcaaa31928@gmail.com",
     packages=find_packages(),
     description="CLI for SocketIO, WebSocket, Unix-Socket. With auto-completion and syntax highlighting.",
-    entry_points={"console_scripts": ["socket-cli = socket_cli.main:cli"],},
+    entry_points={
+        "console_scripts": ["sio = socketio_cli.main:cli"],
+    },
     cmdclass={"lint": lint},
     url="http://pypi.python.org/pypi/PackageName/",
     license="LICENSE.txt",
