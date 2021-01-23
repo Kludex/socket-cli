@@ -5,8 +5,11 @@ description = ""
 authors = ["Marcelo Trylesinski <marcelotryle@gmail.com>"]
 license = "MIT"
 
+[tool.poetry.scripts]
+skt = "skt_cli.main:app"
+
 [tool.poetry.dependencies]
-python = "^3.6"
+python = ">=3.6.1,<4.0"
 typer = "^0.3.2"
 prompt-toolkit = "^3.0.13"
 asyncio = "^3.4.3"
